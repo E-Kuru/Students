@@ -1,4 +1,5 @@
-import React, { useState , useEffect} from 'react'
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav'
 
 const AddStudents = () => {
@@ -8,9 +9,13 @@ const AddStudents = () => {
     const [gotStage, setgotStage] = useState(false)
     const [formation, setformation] = useState('')
 
+    const navigate = useNavigate();
+
     const handleSubmit = e => {
 
         e.preventDefault()
+
+        alert("L'ajout est confirmé !")
 
         const student = {
             name : name,
@@ -18,8 +23,6 @@ const AddStudents = () => {
             gotStage : gotStage,
             formation : formation
         }
-
-        console.log(student);
 
         fetch('http://localhost:5000/addStudent',{
             method : 'POST',
@@ -30,6 +33,8 @@ const AddStudents = () => {
         })
         .then(res => res.json())
         .then(res => console.log(res))
+
+        navigate('/')
     }
 
     const handleNameChange = e => {
@@ -62,7 +67,7 @@ const AddStudents = () => {
                     <option value={true}>Non</option>
                 </select>
                 <input type="text" onChange={handleFormationChange} value={formation} placeholder='Your formation' />
-                <button type='submit'></button>
+                <button type='submit'></button>   
             </form>
 
         </>
