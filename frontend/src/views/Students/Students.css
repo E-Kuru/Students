@@ -1,0 +1,15 @@
+.allStud {
+  margin-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  color: rgb(85, 27, 143);
+}
+
+.allStud .oneStud {
+  margin-top: 2%;
+  margin-right: 2%;
+  margin-left: 2%;
+  width: 25%;
+  border: 1px solid #cccc;
+}

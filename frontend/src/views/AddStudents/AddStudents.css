@@ -1,0 +1,25 @@
+.allForm {
+  margin-top: 4%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  margin-top: 2%;
+  height: 40vh;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+form input,
+select {
+  height: 15%;
+}
+
+button {
+  font-size: 20px;
+  height: 15%;
+}

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Nav from '../../components/Nav/Nav'
 
+import './AddStudents.css'
+
 const AddStudents = () => {
 
     const [name, setName] = useState('')
@@ -65,6 +67,7 @@ const AddStudents = () => {
         <>
             <Nav/>
 
+        <div className="allForm">
             <form onSubmit={handleSubmit}>
                 <input type="text" onChange={handleNameChange} value={name} placeholder='Your Name'/>
                 <input type="number" onChange={handleAgeChange} placeholder='Your age'/>
@@ -74,9 +77,9 @@ const AddStudents = () => {
                     <option value={true}>Non</option>
                 </select>
                 <input type="text" onChange={handleFormationChange} value={formation} placeholder='Your formation' />
-                <button type='submit'></button>   
+                <button type='submit'>Envoyer</button>   
             </form>
-
+        </div>
         </>
     )
 }
