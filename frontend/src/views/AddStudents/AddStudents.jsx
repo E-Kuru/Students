@@ -31,10 +31,17 @@ const AddStudents = () => {
               },
             body: JSON.stringify(student)
         })
-        .then(res => res.json())
-        .then(res => console.log(res))
-
-        navigate('/')
+        .then(res => {
+            console.log('fetch add student')
+            if(res.status === 406){
+                console.log('fetch error ')
+                alert(`Error ${res.status} this students already exist`)
+            } 
+            else {
+                console.log('fetch navigate ')
+                navigate('/')
+            }
+        })
     }
 
     const handleNameChange = e => {

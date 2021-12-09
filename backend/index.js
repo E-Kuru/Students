@@ -57,9 +57,14 @@ app.post('/addStudent', (req,res) => {
         formation : formation
     }
 
-    console.log(newStudent);
+    if(students.find(e => e.name === newStudent.name)){
+        res.status(406).send('Nah this student already exist')
+    }
+    else{
+        res.status(200).send("Added successfull")
+        students = [...students, newStudent]
+    }
 
-    students = [...students, newStudent]
 })
 
 const port = 5000

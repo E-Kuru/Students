@@ -16,7 +16,7 @@ const Students = () => {
         <>
             <Nav/>
             {students.map(e => (
-                <h2>{e.name}</h2>
+                <h2 key={e.name + e.id}>{e.name}</h2>
             ))}
         </>
     )
