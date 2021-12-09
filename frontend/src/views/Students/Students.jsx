@@ -16,7 +16,9 @@ const Students = () => {
     return (
         <>
             <Nav/>
-                <h1 style={{textAlign : 'center', margin : '1% 0', color :'rgb(18, 0, 182)'}}>Liste des étidiants</h1>
+                <h1 style={{textAlign : 'center', margin : '1% 0', color :'rgb(18, 0, 182)'}}>
+                    Liste des étudiants
+                </h1>
             <div className="allStud">
             {students.map(e => (
                 <div className='oneStud'>
